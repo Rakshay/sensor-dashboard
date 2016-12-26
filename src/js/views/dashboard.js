@@ -10,7 +10,8 @@ import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsiv
 // import {Chart} from 'react-google-charts'
 
 const PUBNUB_Settings = {
-  subscribe_key: 'sub-c-5f1b7c8e-fbee-11e3-aa40-02ee2ddab7fe'
+  subscribe_key: 'sub-c-5f1b7c8e-fbee-11e3-aa40-02ee2ddab7fe',
+  ssl: true
 };
 const PUBNUM_Channel = 'pubnub-sensor-network';
 
