@@ -1,4 +1,4 @@
-# sensor-dashborad
+# sensor-dashboard
 
 ### Version
 0.0.1

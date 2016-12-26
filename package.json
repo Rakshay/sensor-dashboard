@@ -1,0 +1,89 @@
+{
+  "name": "sensor-dashboard",
+  "version": "0.0.1",
+  "description": "A sensor Dashboard",
+  "author": "Akshay V R <akshayrakkanchath@gmail.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "&#39;&#39;"
+  },
+  "keywords": [
+    "Sensor Dashboard"
+  ],
+  "dependencies": {
+    "compression": "^1.6.2",
+    "errorhandler": "^1.5.0",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "pm2": "^2.2.2",
+    "react": "0.14.x || ^15.0.0-0",
+    "react-addons-transition-group": "^15.4.1",
+    "react-dom": "0.14.x || ^15.0.0-0",
+    "react-redux": "^5.0.1",
+    "recharts": "^0.19.1",
+    "redux": "^3.6.0",
+    "serve-favicon": "^2.3.2"
+  },
+  "devDependencies": {
+    "@abco/abcostandard": "*",
+    "@abco/ui-sass-luna": "*",
+    "babel": "^6.3.13",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-istanbul": "^1.0.2",
+    "babel-plugin-react-transform": "^2.0.0-beta1",
+    "babel-plugin-transform-class-properties": "^6.3.13",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.3.13",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^2.0.0",
+    "envify": "^1.2.1",
+    "envify-loader": "^0.1.0",
+    "enzyme": "^2.3.0",
+    "expect": "^1.20.1",
+    "gaze-cli": "^0.2.0",
+    "jsdom": "^9.2.0",
+    "mocha": "^2.4.5",
+    "mocha-bamboo-reporter": "^1.1.0",
+    "node-sass": "^3.4.2",
+    "node-sass-import": "^1.0.0",
+    "npm-run-all": "^1.5.1",
+    "nyc": "^7.0.0",
+    "react-addons-test-utils": "0.14.x || ^15.0.0-0",
+    "sass-lint": "^1.4.0",
+    "vulcanize": "^1.14.8",
+    "webpack": "^1.12.14"
+  },
+  "scripts": {
+    "pm2": "pm2",
+    "start": "node index.js --harmony",
+    "startApp": "pm2 start index.js --name Sensor-Dashboard --node-args='--harmony'",
+    "lint": "npm-run-all lint:*",
+    "lint:js": "abcostandard",
+    "lint:css": "sass-lint 'src/**/*.scss' -v",
+    "test": "mocha -R mocha-bamboo-reporter",
+    "testCoverage": "cross-env NODE_ENV=test nyc --reporter=lcov npm test",
+    "build": "npm-run-all lint build:js build:css build:html",
+    "build:js": "NODE_ENV=development webpack --progress --color",
+    "buildDev:js": "NODE_ENV=development webpack --watch --progress --color",
+    "build:css": "node-sass src/scss/index.scss dist/index.build.css --importer node_modules/node-sass-import",
+    "build:html": "vulcanize --inline-scripts --inline-css dist/index.html > dist/index.min.html"
+  },
+  "abcostandard": {
+    "ignore": [
+      "/dist/"
+    ]
+  },
+  "engines": {
+    "node": "4.4.7",
+    "npm": "2.15.8"
+  }
+}
