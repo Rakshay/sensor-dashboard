@@ -24,9 +24,7 @@
     "react-redux": "^5.0.1",
     "recharts": "^0.19.1",
     "redux": "^3.6.0",
-    "serve-favicon": "^2.3.2"
-  },
-  "devDependencies": {
+    "serve-favicon": "^2.3.2",
     "@abco/abcostandard": "*",
     "@abco/ui-sass-luna": "*",
     "babel": "^6.3.13",
@@ -61,6 +59,8 @@
     "sass-lint": "^1.4.0",
     "vulcanize": "^1.14.8",
     "webpack": "^1.12.14"
+  },
+  "devDependencies": {
   },
   "scripts": {
     "pm2": "pm2",
