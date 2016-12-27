@@ -5,26 +5,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 import {AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
-// import { Chart } from 'react-d3-core';
-// import { AreaChart } from 'react-d3-basic';
-// import {Chart} from 'react-google-charts'
 
 const PUBNUB_Settings = {
   subscribe_key: 'sub-c-5f1b7c8e-fbee-11e3-aa40-02ee2ddab7fe',
   ssl: true
 };
 const PUBNUM_Channel = 'pubnub-sensor-network';
-
-let limit = ( cb, rate ) => {
-  var queue = [];
-
-  setInterval(() => {
-      var msg = queue.shift();
-      msg && cb(msg);
-  }, rate );
-
-  return (message) => { queue.push(message) };
-}
 
 class Dashboard extends React.Component {
   componentDidMount () {
